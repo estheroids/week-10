@@ -11,3 +11,15 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
   ext: 'png'
 }).addTo(map);
 
+
+var dialog = document.querySelector('dialog');
+ var showDialogButton = document.querySelector('#show-dialog');
+ if (! dialog.showModal) {
+   dialogPolyfill.registerDialog(dialog);
+ }
+ showDialogButton.addEventListener('click', function() {
+   dialog.showModal();
+ });
+ dialog.querySelector('.close').addEventListener('click', function() {
+   dialog.close();
+ });

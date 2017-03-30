@@ -7,29 +7,145 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
     <!-- Choose a frontend framework CSS file: -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
-    <!-- <link rel="stylesheet" href="css/material.css" /> -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/material.css" />
     <!-- <link rel="stylesheet" href="css/assembly.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
   <body>
     <!-- Sidebar -->
+    <div class="container">
+      <center><img src="weave.png" height="75" width="115"></center>
+      <br>
+      <br>
+  <ul class="nav nav-pills nav-pills-info nav-stacked">
+  <li class="active"><a href="#tab1" data-toggle="tab"><i class="material-icons">list</i>__Manufacturers</a></li>
+  <li><a href="#tab2" data-toggle="tab"><i class="material-icons">dashboard</i>__Purchases</a></li>
+  <li><a href="#tab3" data-toggle="tab"><i class="material-icons">schedule</i>__Basket Secrets</a></li>
+</ul>
+
+
+</div>
+
     <div class="sidebar">
       <nav class="navbar navbar-default">
         <div class="container-fluid clearfix">
           <div class="topright-button" style="float: right">
-            [Add New]
+
+            <!-- Right aligned menu below button -->
+                            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+                              <i class="material-icons" id="addNew">add</i>
+                            </button>
+
+                            <div class="mdl-tooltip" data-mdl-for="addNew">Add New</div>
+
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                              <li class="mdl-menu__item">View History</li>
+                              <li class="mdl-menu__item">Email All Manufacturers</li>
+                            </ul>
           </div>
+
           <div class="navbar-header">
-            <a href="#">Manufacturers</a>
+              <h1 class="item-heading"> Manufacturers</h1>
+              <form>
+                <input type="text" placeholder="e.g. Basketful of Sunshine">
+                <input type="button" value="Search">
+              </form>
           </div>
         </div>
-      </nav>
+        </nav>
       <div class="item">
         <h2 class="item-heading">Tandy’s Basketweavers</h2>
         <div>490 Freedom Drive<br>
         Philadelphia, PA 19425</div>
+
+        <!-- Accent-colored raised button with ripple -->
+        <button id="show-dialog" type="button" class="mdl-button--accent">Low Inventory</button>
+         <dialog class="mdl-dialog">
+             <div class="mdl-grid">
+
+                   <div class="mdl-grid">
+
+                       <div class="mdl-cell mdl-cell--3-col"></div>
+
+                    <!-- Accent-colored raised button -->
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                      This manufacturer has low inventory.
+                    </button>
+                    </div>
+
+                     </div>
+                     <div class="mdl-grid">
+                       <div class="mdl-cell mdl-cell--7-col"><b><h4>Tandy's Basketweavers</h4></b></div>
+                       <div class="mdl-cell mdl-cell--5-col">
+                         <button class="mdl-button mdl-js-button mdl-button--accent">
+                           Edit
+                         </button>
+                         <button class="mdl-button mdl-js-button mdl-button--accent">
+                           Delete
+                         </button>
+                         <button class="mdl-button mdl-js-button mdl-button--accent">
+                           Export
+                         </button>
+                       </div>
+                     </div>
+                     <div class="mdl-grid">
+                       <div class="mdl-cell mdl-cell--4-col">
+                         <b>Address</b>
+                         <br>490 Freedom Drive
+                         <br>Philadelphia, PA 19425
+                       </div>
+                       <div class="mdl-cell mdl-cell--4-col">
+                         <b>Contact</b>
+                         <br>Dave Javies
+                         <br>Senior Weaver
+                         <br>dj@tbw.com
+
+                       </div>
+                       <div class="mdl-cell mdl-cell--4-col">
+                         <b>Sales</b>
+                         <h2>324</h2>
+                         <br>baskets in last 3 days
+                       </div>
+                     </div>
+                     <div class="mdl-grid">
+                       <div class="mdl-cell mdl-cell--12-col"><h5><b>Sales</b></h5></div>
+                     </div>
+<table class="mdl-data-table mdl-js-data-table">
+   <thead>
+     <tr>
+       <th class="mdl-data-table__cell--non-numeric">First Name</th>
+       <th>Last Name</th>
+       <th>Purchase</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td class="mdl-data-table__cell--non-numeric">Mark</td>
+       <td>Otto</td>
+       <td>Fruit Basket</td>
+     </tr>
+     <tr>
+       <td class="mdl-data-table__cell--non-numeric">Jacob</td>
+       <td>Thornton</td>
+       <td>Gift Basket</td>
+     </tr>
+     <tr>
+       <td class="mdl-data-table__cell--non-numeric">Larry</td>
+       <td>the Bird</td>
+       <td>Easter Basket</td>
+     </tr>
+   </tbody>
+ </table>
+           <div class="mdl-dialog__actions">
+             <button type="button" class="mdl-button close">Close</button>
+           </div>
+         </dialog>
+
       </div>
+
       <div class="item">
         <h2 class="item-heading">Basket Case</h2>
         <div>400 S 46th Street<br>
@@ -50,9 +166,11 @@
         <div>2542 Walnut Street<br>
         Philadelphia, PA 19107</div>
       </div>
+
       <div class="sort">
-        Sort by <span class="sort-option selected">A–Z</span> <span class="sort-option">Inventory</span>
+       Sort by <span class="sort-option selected">A–Z</span> <span class="sort-option">Inventory</span>
       </div>
+
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
@@ -60,8 +178,8 @@
     <script src="js/jquery-2.2.0.js"></script>
     <script src="js/leaflet.js"></script>
     <!-- Choose a frontend framework Javascript file: -->
-    <!-- <script src="js/bootstrap.js"></script> -->
-    <!-- <script src="js/material.js"></script> -->
+    <script src="js/bootstrap.js"></script>
+  <script src="js/material.js"></script>
     <!-- <script src="js/assembly.js"></script>  -->
     <script src="js/setup.js"></script>
   </body>

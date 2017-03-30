@@ -1,7 +1,7 @@
 // Leaflet map setup
 var map = L.map('map', {
-  center: [39.923004, -75.183477],
-  zoom: 13
+  center: [40.7128, -74.0059],
+  zoom: 11
 });
 
 var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
@@ -27,9 +27,22 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolab
 
 // To add visualizations created with the Analysis feature, you will need to export the data to a
 // GeoJSON. From there, you can either import the GeoJSON to Carto or use Leaflet's L.geoJson.
+//CARTO API: 194647cf6156009e54c0d86b7b58cbdd4c79c275
 
-var cartoUserName = 'jfreink';
-var cartoVizId = '1f7c9af2-1088-11e7-9c60-0e05a8b3e3d7';
+/*
+CARTO
+upload dataset
+data | style
+toggle between table and map
+modify datset
+put in
+var cartoUserName = "estheroid" and
+var cartoVizId =
+*/
+//https://estheroid.carto.com/builder/54a45b8a-13f2-11e7-b72a-0ecd1babdde5/embed
+
+var cartoUserName = 'estheroid';
+var cartoVizId = '75ff5378-13f9-11e7-9d84-0e3ebc282e83';
 
 var layerUrl = 'https://'+cartoUserName+'.carto.com/api/v2/viz/'+cartoVizId+'/viz.json';
 
